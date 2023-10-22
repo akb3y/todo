@@ -10,7 +10,7 @@ module.exports = {
   },
   target: "web",
   devServer: {
-    port: "3000",
+    port: "3100",
     static: {
       directory: path.join(__dirname, "public")
     },
@@ -24,9 +24,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|css)$/,
         exclude: /node_modules/,
-        use: "babel-loader"
+        use: ["babel-loader", "style-loader", "css-loader"]
       }
     ]
   },
