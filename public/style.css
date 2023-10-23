@@ -49,3 +49,8 @@ button:active {
 button:active {
   opacity: .5;
 }
+
+.completedCheckbox {
+    height: 20px;
+    width: 20px;
+}

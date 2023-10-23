@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TaskForm from "./components/TaskForm.jsx";
+import DataMap from "./components/DataMap.jsx";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div>
       <TaskForm />
+      <DataMap data={data} />
     </div>
   );
 };
