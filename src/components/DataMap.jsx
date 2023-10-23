@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import { TiDelete } from "react-icons/ti";
 
 const DataMap = ({ data }) => {
   const handleCheckboxChange = (itemId, title, description, completed) => {
@@ -11,28 +12,39 @@ const DataMap = ({ data }) => {
     };
     axios
       .put(`http://localhost:3000/tasks/${itemId}`, form)
-      .then(() => {
-        console.log("Successfully updated");
-      })
+      .then()
       .catch((error) => {
         console.error("Error toggling completed status:", error);
       });
   };
 
+  const deleteTask = (itemId) => {
+    axios
+      .delete(`http://localhost:3000/tasks/${itemId}`)
+      .then()
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div>
       {data.map((item) => (
-        <div key={item._id}>
-          <h2>{item.title}</h2>
+        <div key={item._id} className="data">
+          <h2>
+            <TiDelete className="delete" onClick={() => deleteTask(item._id)} />
+            {item.title}
+          </h2>
           <h3>{item.description}</h3>
-          <input
-            className="completedCheckbox"
-            type="checkbox"
-            checked={item.completed}
-            onChange={() =>
-              handleCheckboxChange(item._id, item.title, item.description, item.completed)
-            }
-          />
+          <label>
+            <input
+              className="completedCheckbox"
+              type="checkbox"
+              checked={item.completed}
+              onChange={() =>
+                handleCheckboxChange(item._id, item.title, item.description, item.completed)
+              }
+            />
+            Completed?
+          </label>
         </div>
       ))}
     </div>

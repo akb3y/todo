@@ -15,6 +15,7 @@ const App = () => {
 
   return (
     <div>
+      <h1 style={{ textAlign: "center" }}>Task Master</h1>
       <TaskForm />
       <DataMap data={data} />
     </div>
