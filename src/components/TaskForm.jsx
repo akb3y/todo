@@ -53,7 +53,7 @@ const TaskForm = () => {
           onChange={handleDescription}
           value={description}
           placeholder="Separate subtasks by a comma"
-          maxLength={35}
+          maxLength={50}
         />
         <button type="submit">Submit</button>
       </form>
