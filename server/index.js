@@ -17,7 +17,7 @@ async function connectToMongo() {
 //Schema
 const taskSchema = new mongoose.Schema({
   title: String,
-  description: String,
+  description: [String],
   completed: Boolean
 });
 

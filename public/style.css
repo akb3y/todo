@@ -1,12 +1,27 @@
+html {
+    background-image: url('https://img.freepik.com/premium-vector/cute-seamless-pattern-with-white-flowers-light-blue-background_609851-81.jpg');
+}
+
+.App {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .taskForm {
-    text-align: center;
+  text-align: center;
+  margin: auto;
+  width: 350px;
+  border: 1px solid black;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
+  padding: 30px;
+  background-color: whitesmoke;
 }
 
 form {
     display: inline-block;
+    text-align: left;
 }
 
-form input {
+form input{
   display: block;
   margin: 10px 0 0;
   height: 40px;
@@ -14,9 +29,9 @@ form input {
 }
 
 button {
-    margin-top: 10px;
-  background: #33B864;
-  border: 1px solid #33B864;
+  margin-top: 20px;
+  background: #c7d3f5;
+  border: 1px solid #c7d3f5;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
@@ -43,7 +58,7 @@ button:hover,
 button:active {
   background-color: initial;
   background-position: 0 0;
-  color: #33B864;
+  color: #c7d3f5;
 }
 
 button:active {
@@ -55,8 +70,32 @@ button:active {
     width: 20px;
 }
 
+.dataMap {
+  padding-top: 20px;
+  text-align: left;
+  margin: auto;
+  width: 450px;
+}
+
 .data {
-    margin: auto;
-  width: 15%;
+  border: 1px solid black;
+  margin: 20px;
+  background-color: whitesmoke;
   padding: 10px;
+  width: 390px;
+}
+.data h2, .data h3 {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.delete {
+  margin-right: 20px;
+  color: red;
+  font-size: 25px;
+}
+
+ul {
+  margin-left: 30px;
+  margin-top: -10px;
 }

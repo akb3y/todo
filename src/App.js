@@ -14,7 +14,7 @@ const App = () => {
   }, [data]);
 
   return (
-    <div>
+    <div className="App">
       <h1 style={{ textAlign: "center" }}>Task Master</h1>
       <TaskForm />
       <DataMap data={data} />

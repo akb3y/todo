@@ -3,7 +3,7 @@ import axios from "axios";
 
 const TaskForm = () => {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState([]);
   const [completed, setCompleted] = useState(false);
 
   const handleTask = (e) => {
@@ -11,7 +11,8 @@ const TaskForm = () => {
   };
 
   const handleDescription = (e) => {
-    setDescription(e.target.value);
+    const descriptionArray = e.target.value.split(",");
+    setDescription(descriptionArray);
   };
 
   const resetTask = () => {
@@ -21,7 +22,7 @@ const TaskForm = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Corrected the typo, it's preventDefault(), not prevent.default()
+    e.preventDefault();
     let form = {
       title: title,
       description: description,
@@ -36,18 +37,23 @@ const TaskForm = () => {
   return (
     <div className="taskForm">
       <form onSubmit={handleSubmit}>
+        <label>Enter a task: </label>
         <input
           type="text"
           onChange={handleTask}
           value={title}
-          placeholder="What is the task?"
+          placeholder="Task"
+          maxLength={15}
           required
         />
+        <br />
+        <label>Describe the task: </label>
         <input
           type="text"
           onChange={handleDescription}
           value={description}
-          placeholder="Describe the task"
+          placeholder="Separate subtasks by a comma"
+          maxLength={35}
         />
         <button type="submit">Submit</button>
       </form>

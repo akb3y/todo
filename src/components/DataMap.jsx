@@ -26,14 +26,13 @@ const DataMap = ({ data }) => {
   };
 
   return (
-    <div>
+    <div className="dataMap">
       {data.map((item) => (
         <div key={item._id} className="data">
           <h2>
             <TiDelete className="delete" onClick={() => deleteTask(item._id)} />
             {item.title}
           </h2>
-          <h3>{item.description}</h3>
           <label>
             <input
               className="completedCheckbox"
@@ -45,6 +44,11 @@ const DataMap = ({ data }) => {
             />
             Completed?
           </label>
+          <ul>
+            {item.description.map((array, index) => (
+              <li key={index}>{array}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
@@ -56,7 +60,7 @@ DataMap.propTypes = {
     PropTypes.shape({
       _id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      description: PropTypes.string,
+      description: PropTypes.array,
       completed: PropTypes.bool
     })
   ).isRequired
